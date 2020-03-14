@@ -1,0 +1,1 @@
+ln ./zshrc.config ~/.zshrc
