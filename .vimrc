@@ -39,6 +39,7 @@ call plug#end()
 set path+=**
 set wildmenu
 set mouse=a
+colorscheme badwolf
 " Mappings to make Vim more friendly towards presenting slides.
 autocmd BufNewFile,BufRead *.vpm call SetVimPresentationMode()
 function SetVimPresentationMode()
