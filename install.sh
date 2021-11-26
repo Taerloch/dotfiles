@@ -10,6 +10,7 @@ ln -f $DOTFILE_DIR/vimrc.config ~/.vimrc
 ln -fs $DOTFILE_DIR/nvim ~/.config/nvim
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp z.sh ~/z.sh
-wget -x -nc -o ~/.local/bin/nvim https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage
-chmod +x ~/.local/bin/nvim
+wget -x -nc -o ~/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage
+chmod +x ~/.local/bin/nvim.appimage
+sudo ln -s  ~/.local/bin/nvim.appimage /usr/local/bin/nvim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
