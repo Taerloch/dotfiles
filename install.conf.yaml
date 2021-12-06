@@ -3,10 +3,10 @@
       create: true
       relink: true
 - clean: []
-- link: {
-  ~/.zshrc: zshrc.conf
-  ~/.config/nvim: nvim
-}
-- shell: [
+- link: 
+    ~/.zshrc: zshrc.config
+    ~/.config/nvim: nvim
 
-]
+- shell: []
+
+
