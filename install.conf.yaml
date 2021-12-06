@@ -4,6 +4,9 @@
       relink: true
 - clean: []
 - link: {
-
+  ~/.zshrc: zshrc.conf
+  ~/.config/nvim: nvim
 }
-- shell: []
+- shell: [
+
+]

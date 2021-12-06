@@ -10,4 +10,4 @@ ln -f $DOTFILE_DIR/vimrc.config ~/.vimrc
 ln -fs $DOTFILE_DIR/nvim ~/.config/nvim
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp z.sh ~/z.sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autol:oad/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
