@@ -4,7 +4,7 @@ ZSH=
 echo $DOTFILE_DIR
 mkdir -p $DOTFILE_DIR 
 cp ./*.config $DOTFILE_DIR
-cp -r nvim $DOTFILE_DIR
+cp -r init.vim $DOTFILE_DIR
 #
 sh -c "$(curl -L https://github.com/zsh-users/antigen/releases/download/v2.2.3/antigen.zsh > antigen.zsh)"
 mv ./antigen.zsh $DOTFILE_DIR
@@ -17,4 +17,4 @@ ln -f $DOTFILE_DIR/zshrc.config ~/.zshrc
 ln -f $DOTFILE_DIR/tmux.config ~/.tmux.conf
 ln -f $DOTFILE_DIR/alias.config ~/.zsh_alias
 ln -f $DOTFILE_DIR/vimrc.config ~/.vimrc
-ln -fs $DOTFILE_DIR/nvim/init.vim ~/.config/nvim/init.vim
+ln -fs $DOTFILE_DIR/init.vim ~/.config/nvim/init.vim
