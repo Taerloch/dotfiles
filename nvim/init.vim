@@ -73,7 +73,7 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
-lua require('lspconfig').pyright.setup{…}
-lua require('lspconfig').dockerls.setup{…}
-lua require('lspconfig').terraformls.setup{…}
+" lua require('lspconfig').pyright.setup{…}
+" lua require('lspconfig').dockerls.setup{…}
+" lua require('lspconfig').terraformls.setup{…}
 autocmd BufWritePre *.tf lua vim.lsp.buf.formatting()
