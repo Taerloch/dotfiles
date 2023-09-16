@@ -55,9 +55,10 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   rust_analyzer = {},
-  terraform_ls = {},
+  terraformls = {},
   marksman = {},
   pylsp = {},
+bashls= {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
