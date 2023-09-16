@@ -10,3 +10,4 @@ My weak-ass dotfiles
 ```
 # Purpose
 
+TODO: add .local/bin and .config/nvim to install script
