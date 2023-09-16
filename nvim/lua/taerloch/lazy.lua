@@ -191,7 +191,12 @@ require('lazy').setup({
   {  "eandrju/cellular-automaton.nvim"},
   {  "laytan/cloak.nvim"},
   
-
+ {"nvim-treesitter/playground"},
+ {"theprimeagen/harpoon"},
+ {"theprimeagen/refactoring.nvim"},
+ {"mbbill/undotree"},
+ {"tpope/vim-fugitive"},
+ {"nvim-treesitter/nvim-treesitter-context"},
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
