@@ -54,8 +54,10 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {},
+  terraform_ls = {},
+  marksman = {},
+  pylsp = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
