@@ -28,7 +28,16 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-  'sjl/badwolf',
+ 'alexanderjeurissen/lumiere.vim',
+{
+    -- Theme inspired by Atom
+    'sjl/badwolf',
+    config = function()
+      vim.cmd.colorscheme 'badwolf'
+    end,
+  },
+
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -97,14 +106,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
 
   {
     -- Set lualine as statusline
@@ -113,7 +114,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'gruvbox-material',
         component_separators = '|',
         section_separators = '',
       },
@@ -163,6 +164,21 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  {
+   'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    dependencies = {
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},             -- Required
+    {'williamboman/mason.nvim'},           -- Optional
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},     -- Required
+    {'hrsh7th/cmp-nvim-lsp'}, -- Required
+    {'L3MON4D3/LuaSnip'},     -- Required
+  }
+},
   {'sotte/presenting.vim'  },
   {
         "iamcco/markdown-preview.nvim",
@@ -170,7 +186,13 @@ require('lazy').setup({
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
 }, -- Markdown Preview
+  {  "folke/zen-mode.nvim"},
+  {  "github/copilot.vim"},
+  {  "eandrju/cellular-automaton.nvim"},
+  {  "laytan/cloak.nvim"},
   
+
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
