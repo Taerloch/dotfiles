@@ -197,6 +197,23 @@ require('lazy').setup({
  {"mbbill/undotree"},
  {"tpope/vim-fugitive"},
  {"nvim-treesitter/nvim-treesitter-context"},
+  {'vim-pandoc/vim-pandoc'},
+  {'vim-pandoc/vim-pandoc-syntax' },
+  { 'techtuner/aura-neovim' },
+  { 'jordst/colorscheme' },
+  -- { 'olivercederborg/poimandres.nvim' },
+  -- { 'LunarVim/horizon.nvim' },
+  { 'techygrrrl/techygrrrl-cmyk-colourrrs-neovim' },
+  { 'jascha030/nitepal.nvim' },
+  { 'maxmx03/fluoromachine.nvim' },
+  { 'loctvl842/monokai-pro.nvim' },
+  { 'hgoose/temple.vim' },
+  { 'RaphaeleL/my_vivid' },
+  { 'alek3y/spacegray.vim' },
+  { 'cseelus/nvim-colors-tone' },
+  { 'AndrewLockVI/dark_ocean.vim' },
+  { 'seandewar/paragon.vim' },
+
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
