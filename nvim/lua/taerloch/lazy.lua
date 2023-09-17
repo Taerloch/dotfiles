@@ -197,6 +197,7 @@ require('lazy').setup({
  {"mbbill/undotree"},
  {"tpope/vim-fugitive"},
  {"nvim-treesitter/nvim-treesitter-context"},
+
   {'vim-pandoc/vim-pandoc'},
   {'vim-pandoc/vim-pandoc-syntax' },
   { 'techtuner/aura-neovim' },
@@ -213,6 +214,7 @@ require('lazy').setup({
   { 'cseelus/nvim-colors-tone' },
   { 'AndrewLockVI/dark_ocean.vim' },
   { 'seandewar/paragon.vim' },
+
 
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
