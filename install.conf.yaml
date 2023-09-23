@@ -4,9 +4,20 @@
       relink: true
 - clean: []
 - link: 
-    ~/.zshrc: zshrc.config
-    ~/.config/nvim: nvim
-
+    ~/.zshrc: 
+        path: zshrc.config
+        force: true
+    ~/.config/nvim: 
+        path: nvim
+        create: true
+        force: true
+    ~/.zsh_alias: alias.config
+    ~/.tmux.conf: tmux.config 
+    ~/.bash_aliase: alias.config
+- create:
+    - ~/downloads
+    - ~/externals
+    - ~/projects
 - shell: []
 
 
