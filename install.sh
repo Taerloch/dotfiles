@@ -16,5 +16,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 ln -f $DOTFILE_DIR/zshrc.config ~/.zshrc
 ln -f $DOTFILE_DIR/tmux.config ~/.tmux.conf
 ln -f $DOTFILE_DIR/alias.config ~/.zsh_alias
+ln -f $DOTFILE_DIR/alias.config ~/.bash_aliases
 ln -f $DOTFILE_DIR/vimrc.config ~/.vimrc
-#ln -fs $DOTFILE_DIR/init.vim ~/.config/nvim/init.vim
+#ln -f $DOTFILE_DIR/vimrc.config ~/.vimrcln -fs $DOTFILE_DIR/init.vim ~/.config/nvim/init.vim
