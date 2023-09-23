@@ -12,5 +12,10 @@ My weak-ass dotfiles
 
 TODO: add .local/bin and .config/nvim to install script
 
-## I plan on ***ADDING*** more to
+## I plan on ***ADDING*** more
+Adding in BATCAT.
+Adding in fzf
+evaluating dotbot
+python, rust, go, markdown
+nvim lua config.
  
