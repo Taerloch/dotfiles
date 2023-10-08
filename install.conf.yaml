@@ -13,11 +13,12 @@
         force: true
     ~/.zsh_alias: alias.config
     ~/.tmux.conf: tmux.config 
-    ~/.bash_aliase: alias.config
+    ~/.bash_aliases: alias.config
 - create:
     - ~/downloads
     - ~/externals
     - ~/projects
+    - /usr/share/nvim  
 - shell: []
 
 
