@@ -25,7 +25,7 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-
+  
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
  'alexanderjeurissen/lumiere.vim',
@@ -106,7 +106,7 @@ require('lazy').setup({
     },
   },
 
-
+ {'preservim/nerdtree'},
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -214,7 +214,7 @@ require('lazy').setup({
   { 'cseelus/nvim-colors-tone' },
   { 'AndrewLockVI/dark_ocean.vim' },
   { 'seandewar/paragon.vim' },
-
+  {'ryanoasis/vim-devicons'},
 
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart

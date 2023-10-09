@@ -32,4 +32,4 @@ _aws-profile-completer () {
 }
 complete -F _aws-profile-completer aws-profile
 
-
+# nothing to see here?
