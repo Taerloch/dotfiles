@@ -1,0 +1,12 @@
+%echo Generating a default key
+Key-Type: RSA
+Key-Length: 2048
+Subkey-Type: default
+Name-Real: Chuck Richmond
+Name-Comment: Q4 crichmond paccar machine
+Name-Email: chuck.richmond@paccar.com
+Expire-Date: 4m
+Passphrase: ""
+# Do a commit here so we can print "done"
+%commit
+%echo done 

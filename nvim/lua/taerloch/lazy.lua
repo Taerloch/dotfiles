@@ -25,7 +25,8 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  
+  'craigmac/vim-mermaid',
+'dense-analysis/ale',  
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
  'alexanderjeurissen/lumiere.vim',
@@ -126,10 +127,10 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+   -- opts = {
+   --   char = '┊',
+   --   show_trailing_blankline_indent = false,
+   --  },
   },
 
   -- "gc" to comment visual regions/lines
@@ -179,13 +180,16 @@ require('lazy').setup({
     {'L3MON4D3/LuaSnip'},     -- Required
   }
 },
+  {'github/copilot.vim'},
   {'sotte/presenting.vim'  },
   {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
-}, -- Markdown Preview
+}, 
+
+  -- Markdown Preview
   {  "folke/zen-mode.nvim"},
   {  "github/copilot.vim"},
   {  "eandrju/cellular-automaton.nvim"},
@@ -198,8 +202,8 @@ require('lazy').setup({
  {"tpope/vim-fugitive"},
  {"nvim-treesitter/nvim-treesitter-context"},
 
-  {'vim-pandoc/vim-pandoc'},
-  {'vim-pandoc/vim-pandoc-syntax' },
+--  {'vim-pandoc/vim-pandoc'},
+--  {'vim-pandoc/vim-pandoc-syntax' },
   { 'techtuner/aura-neovim' },
   { 'jordst/colorscheme' },
   -- { 'olivercederborg/poimandres.nvim' },
@@ -222,7 +226,7 @@ require('lazy').setup({
   --       Uncomment any of the lines below to enable them.
   -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
-
+ require 'taerloch.obsidian',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
   --    up-to-date with whatever is in the kickstart repo.

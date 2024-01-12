@@ -4,3 +4,4 @@ vim.g.maplocalleader = ' '
 require("taerloch.remap");
 require("taerloch/set");
 require("taerloch/lazy");
+require("taerloch.obsidian");
