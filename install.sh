@@ -19,3 +19,5 @@ ln -f $DOTFILE_DIR/alias.config ~/.zsh_alias
 ln -f $DOTFILE_DIR/alias.config ~/.bash_aliases
 ln -f $DOTFILE_DIR/vimrc.config ~/.vimrc
 #ln -f $DOTFILE_DIR/vimrc.config ~/.vimrcln -fs $DOTFILE_DIR/init.vim ~/.config/nvim/init.vim
+#fixes WSL Ping issues in debian
+sudo setcap cap_net_raw+p /bin/ping
