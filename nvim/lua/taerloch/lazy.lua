@@ -37,7 +37,56 @@ require('lazy').setup({
       vim.cmd.colorscheme 'badwolf'
     end,
   },
-
+{
+  'nvim-orgmode/orgmode',
+  dependencies = {
+    "lukas-reineke/headlines.nvim",
+    "nvim-orgmode/org-bullets.nvim",
+    "massix/org-checkbox.nvim",
+    },
+  event = 'VeryLazy',
+  config = function()
+    -- Setup orgmode
+    require('orgmode').setup({
+      org_agenda_files = {'~/orgfiles/**/*', '~/org_roam_files/**/*'},
+      org_default_notes_file = '~/orgfiles/refile.org',
+      org_capture_templates = {
+         r = {
+        datetreedescription = "Repo",
+        template = "* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?",
+        target = "~/org/repos.org",
+        }
+    }
+ 
+    })
+    require('headlines').setup()
+    require('org-bullets').setup()
+    require("orgcheckbox").setup({ lhs = "<leader>oT" })
+  end
+},
+  {
+  "chipsenkbeil/org-roam.nvim",
+  dependencies = {
+    {
+      "nvim-orgmode/orgmode",
+    },
+  },
+  config = function()
+    require("org-roam").setup({
+      directory = "~/org_roam_files",
+      -- optional
+      org_files = {
+        "~/org_files",
+        "~/org_files/*.org"
+      },
+         extensions = {
+    dailies = {
+      directory = "journal",
+    },
+  },
+    })
+  end
+},
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -213,20 +262,17 @@ require('lazy').setup({
   { 'maxmx03/fluoromachine.nvim' },
   { 'loctvl842/monokai-pro.nvim' },
   { 'hgoose/temple.vim' },
-  { 'RaphaeleL/my_vivid' },
   { 'alek3y/spacegray.vim' },
   { 'cseelus/nvim-colors-tone' },
-  { 'AndrewLockVI/dark_ocean.vim' },
   { 'seandewar/paragon.vim' },
   {'ryanoasis/vim-devicons'},
-  {'edluffy/hologram.nvim'},
+ -- {'edluffy/hologram.nvim'},
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
   -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
- require 'taerloch.obsidian',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
   --    up-to-date with whatever is in the kickstart repo.
