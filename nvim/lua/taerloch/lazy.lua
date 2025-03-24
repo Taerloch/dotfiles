@@ -26,67 +26,67 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'craigmac/vim-mermaid',
-'dense-analysis/ale',  
+  'dense-analysis/ale',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
- 'alexanderjeurissen/lumiere.vim',
-{
+  'alexanderjeurissen/lumiere.vim',
+  {
     -- Theme inspired by Atom
     'sjl/badwolf',
     config = function()
       vim.cmd.colorscheme 'badwolf'
     end,
   },
-{
-  'nvim-orgmode/orgmode',
-  dependencies = {
-    "lukas-reineke/headlines.nvim",
-    "nvim-orgmode/org-bullets.nvim",
-    "massix/org-checkbox.nvim",
-    },
-  event = 'VeryLazy',
-  config = function()
-    -- Setup orgmode
-    require('orgmode').setup({
-      org_agenda_files = {'~/orgfiles/**/*', '~/org_roam_files/**/*'},
-      org_default_notes_file = '~/orgfiles/refile.org',
-      org_capture_templates = {
-         r = {
-        datetreedescription = "Repo",
-        template = "* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?",
-        target = "~/org/repos.org",
-        }
-    }
- 
-    })
-    require('headlines').setup()
-    require('org-bullets').setup()
-    require("orgcheckbox").setup({ lhs = "<leader>oT" })
-  end
-},
   {
-  "chipsenkbeil/org-roam.nvim",
-  dependencies = {
-    {
-      "nvim-orgmode/orgmode",
+    'nvim-orgmode/orgmode',
+    dependencies = {
+      "lukas-reineke/headlines.nvim",
+   -- "nvim-orgmode/org-bullets.nvim",
+      "massix/org-checkbox.nvim",
     },
+    event = 'VeryLazy',
+    config = function()
+      -- Setup orgmode
+      require('orgmode').setup({
+        org_agenda_files = { '~/orgfiles/**/*', '~/org_roam_files/**/*' },
+        org_default_notes_file = '~/orgfiles/refile.org',
+        org_capture_templates = {
+          r = {
+            datetreedescription = "Repo",
+            template = "* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?",
+            target = "~/org/repos.org",
+          }
+        }
+
+      })
+      require('headlines').setup()
+      require('org-bullets').setup()
+      require("orgcheckbox").setup({ lhs = "<leader>oT" })
+    end
   },
-  config = function()
-    require("org-roam").setup({
-      directory = "~/org_roam_files",
-      -- optional
-      org_files = {
-        "~/org_files",
-        "~/org_files/*.org"
+  {
+    "chipsenkbeil/org-roam.nvim",
+    dependencies = {
+      {
+        "nvim-orgmode/orgmode",
       },
-         extensions = {
-    dailies = {
-      directory = "journal",
     },
+    config = function()
+      require("org-roam").setup({
+        directory = "~/org_roam_files",
+        -- optional
+        org_files = {
+          "~/org_files",
+          "~/org_files/*.org"
+        },
+        extensions = {
+          dailies = {
+            directory = "journal",
+          },
+        },
+      })
+    end
   },
-    })
-  end
-},
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -100,7 +100,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -142,21 +142,21 @@ require('lazy').setup({
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
-        vim.keymap.set({'n', 'v'}, ']c', function()
+        vim.keymap.set({ 'n', 'v' }, ']c', function()
           if vim.wo.diff then return ']c' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
-        vim.keymap.set({'n', 'v'}, '[c', function()
+        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        vim.keymap.set({ 'n', 'v' }, '[c', function()
           if vim.wo.diff then return '[c' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
+        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
       end,
     },
   },
 
- {'preservim/nerdtree'},
+  { 'preservim/nerdtree' },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -176,10 +176,10 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-   -- opts = {
-   --   char = '┊',
-   --   show_trailing_blankline_indent = false,
-   --  },
+    -- opts = {
+    --   char = '┊',
+    --   show_trailing_blankline_indent = false,
+    --  },
   },
 
   -- "gc" to comment visual regions/lines
@@ -215,44 +215,44 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   {
-   'VonHeikemen/lsp-zero.nvim',
+    'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     dependencies = {
-    -- LSP Support
-    {'neovim/nvim-lspconfig'},             -- Required
-    {'williamboman/mason.nvim'},           -- Optional
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },         -- Required
+      { 'williamboman/mason.nvim' },       -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-    -- Autocompletion
-    {'hrsh7th/nvim-cmp'},     -- Required
-    {'hrsh7th/cmp-nvim-lsp'}, -- Required
-    {'L3MON4D3/LuaSnip'},     -- Required
-  }
-},
-  {'github/copilot.vim'},
-  {'sotte/presenting.vim'  },
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' }, -- Required
+    }
+  },
+  { 'github/copilot.vim' },
+  { 'sotte/presenting.vim' },
   {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle" },
-        ft = { "markdown" },
-        build = function() vim.fn["mkdp#util#install"]() end,
-}, 
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
 
   -- Markdown Preview
-  {  "folke/zen-mode.nvim"},
-  {  "github/copilot.vim"},
-  {  "eandrju/cellular-automaton.nvim"},
-  {  "laytan/cloak.nvim"},
-  
- {"nvim-treesitter/playground"},
- {"theprimeagen/harpoon"},
- {"theprimeagen/refactoring.nvim"},
- {"mbbill/undotree"},
- {"tpope/vim-fugitive"},
- {"nvim-treesitter/nvim-treesitter-context"},
+  { "folke/zen-mode.nvim" },
+  { "github/copilot.vim" },
+  { "eandrju/cellular-automaton.nvim" },
+  { "laytan/cloak.nvim" },
 
---  {'vim-pandoc/vim-pandoc'},
---  {'vim-pandoc/vim-pandoc-syntax' },
+  { "nvim-treesitter/playground" },
+  { "theprimeagen/harpoon" },
+  { "theprimeagen/refactoring.nvim" },
+  { "mbbill/undotree" },
+  { "tpope/vim-fugitive" },
+  { "nvim-treesitter/nvim-treesitter-context" },
+
+  --  {'vim-pandoc/vim-pandoc'},
+  --  {'vim-pandoc/vim-pandoc-syntax' },
   { 'techtuner/aura-neovim' },
   { 'jordst/colorscheme' },
   -- { 'olivercederborg/poimandres.nvim' },
@@ -265,8 +265,8 @@ require('lazy').setup({
   { 'alek3y/spacegray.vim' },
   { 'cseelus/nvim-colors-tone' },
   { 'seandewar/paragon.vim' },
-  {'ryanoasis/vim-devicons'},
- -- {'edluffy/hologram.nvim'},
+  { 'ryanoasis/vim-devicons' },
+  -- {'edluffy/hologram.nvim'},
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
