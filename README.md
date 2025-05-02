@@ -10,7 +10,9 @@ My weak-ass dotfiles
 ```
 # Purpose
 
-TODO: add .local/bin and .config/nvim to install script
+* TODO: add .local/bin and .config/nvim to install script
+
+* TODO: Add restic for file backups
 
 ## I plan on ***ADDING*** more
 Adding in BATCAT.
