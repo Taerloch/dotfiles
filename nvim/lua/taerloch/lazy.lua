@@ -61,7 +61,7 @@ require('lazy').setup({
 
       })
       require('headlines').setup()
-      require('org-bullets').setup()
+  --    require('org-bullets').setup()
       require("orgcheckbox").setup({ lhs = "<leader>oT" })
     end
   },
@@ -273,8 +273,8 @@ require('lazy').setup({
   { 'sotte/presenting.vim' },
   {
     "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle" },
-    ft = { "markdown" },
+    cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"  },
+    ft =  {"markdown"} ,
     build = function() vim.fn["mkdp#util#install"]() end,
   },
 

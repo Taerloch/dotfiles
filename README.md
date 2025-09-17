@@ -20,4 +20,6 @@ Adding in fzf
 evaluating dotbot
 python, rust, go, markdown
 nvim lua config.
- 
+evaluating mise `curl https://mise.run | sh`
+
+
